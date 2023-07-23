@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "main.h"
 /**
  * str_len - gets the length of the passed string
@@ -11,7 +12,7 @@ int str_len(char *s)
 {
 	int i = 0;
 
-	if (s == (char *)0)
+	if (s == NULL)
 	{
 		return (-1);
 	}
