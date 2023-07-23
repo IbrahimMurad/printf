@@ -1,5 +1,7 @@
 #include <stdarg.h>
 #include <unistd.h>
+#include "main.h"
+#include <stdlib.h>
 
 /**
  * _printf - prints any passed strings
@@ -16,6 +18,8 @@ int _printf(const char *format, ...)
 	int printed = 0;
 	va_list args;
 	char temp_c;
+	char *s;
+	int len;
 
 	va_start(args, format);
 	while (format[i])
@@ -32,6 +36,15 @@ int _printf(const char *format, ...)
 				case '%':
 					temp_c = '%';
 					printed += write(1, &temp_c, 1);
+					break;
+				case 's':
+					s = va_arg(args, char *);
+					if (s == NULL)
+					{
+						s =  "(null)";
+					}
+					len = str_len(s);
+					printed += write(1, s, len);
 					break;
 				default:
 					return (-1); 
