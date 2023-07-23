@@ -14,17 +14,19 @@
 int vprint(char c, va_list args)
 {
 	int printed = 0;
+	va_list temp_args;
+	va_copy(temp_args, args);
 
 	switch (c)
 	{
 		case 'c':
-			printed += _putchar(va_arg(args, int));
+			printed += _putchar(va_arg(temp_args, int));
 			break;
 		case '%':
 			printed += _putchar('%');
 			break;
 		case 's':
-			printed += _putstr(va_arg(args, char *));
+			printed += _putstr(va_arg(temp_args, char *));
 			break;
 		default:
 			return (-1);
