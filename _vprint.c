@@ -33,7 +33,9 @@ int vprint(char c, va_list args)
 			printed += _putnum(va_arg(temp_args, int), 10);
 			break;
 		default:
-			return (-1);
+			printed += _putchar('%');
+			printed += _putchar(c);
+			break;
 	}
 	return (printed);
 }
