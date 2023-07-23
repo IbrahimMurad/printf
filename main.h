@@ -17,4 +17,6 @@ int _putstr(char *s);
 
 int _putnum(int num, unsigned int base);
 
+int _putunsigned(unsigned int num, unsigned int base);
+
 #endif
