@@ -16,7 +16,7 @@ int _putnum(int num, unsigned int base)
 	int printed = 0;
 	char sign = '-';
 
-	if (num < 0)
+	if (base == 10 && num < 0)
 	{
 		temp_num = -num;
 		if (base == 10)

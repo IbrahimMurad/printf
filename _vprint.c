@@ -32,6 +32,9 @@ int vprint(char c, va_list args)
 		case 'd':
 			printed += _putnum(va_arg(temp_args, int), 10);
 			break;
+		case 'b':
+			printed += _putnum(va_arg(temp_args, int), 2);
+			break;
 		default:
 			printed += _putchar('%');
 			printed += _putchar(c);
