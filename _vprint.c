@@ -15,6 +15,11 @@ int vprint(char c, va_list args)
 {
 	int printed = 0;
 	va_list temp_args;
+	
+	if (temp_args == NULL)
+	{
+		return (-1);
+	}
 	va_copy(temp_args, args);
 
 	switch (c)
@@ -33,19 +38,19 @@ int vprint(char c, va_list args)
 			printed += _putnum(va_arg(temp_args, int), 10);
 			break;
 		case 'b':
-			printed += _putunsigned(va_arg(temp_args, int), 2);
+			printed += _putunsigned(va_arg(temp_args, unsigned int), 2);
 			break;
 		case 'u':
 			printed += _putunsigned(va_arg(temp_args, unsigned int), 10);
 			break;
 		case 'o':
-			printed += _putunsigned(va_arg(temp_args, int), 8);
+			printed += _putunsigned(va_arg(temp_args, unsigned int), 8);
 			break;
 		case 'x':
 			printed += _putnum(va_arg(temp_args, int), 16);
 			break;
 		case 'X':
-			printed += _putunsigned(va_arg(temp_args, int), 16);
+			printed += _putunsigned(va_arg(temp_args, unsigned int), 16);
 			break;
 		default:
 			printed += _putchar('%');
