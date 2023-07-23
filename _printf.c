@@ -14,13 +14,14 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0;
-	int printed = 0;
+	int i = 0, len, printed = 0;
 	va_list args;
-	char temp_c;
-	char *s;
-	int len;
+	char temp_c, *s;
 
+	if (format == NULL)
+	{
+		return (-1);
+	}
 	va_start(args, format);
 	while (format[i])
 	{
