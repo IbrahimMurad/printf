@@ -28,6 +28,10 @@ int vprint(char c, va_list args)
 		case 's':
 			printed += _putstr(va_arg(temp_args, char *));
 			break;
+		case 'i':
+		case 'd':
+			printed += _putnum(va_arg(temp_args, int), 10);
+			break;
 		default:
 			return (-1);
 	}
