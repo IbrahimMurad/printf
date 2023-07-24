@@ -11,6 +11,10 @@ char *rot13(char *s)
 	char output_arr[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	int i, j;
 
+	if (s == NULL)
+	{
+		return (NULL);
+	}
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; j < 52; j++)
