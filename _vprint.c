@@ -40,6 +40,9 @@ int vprint(char c, va_list args)
 		case 'S':
 			printed += _printf("%s", only_printed_chars(va_arg(args, char *)));
 			break;
+		case 'r':
+			printed += _printf("%s", rev_str(va_arg(args, char*)));
+			break;
 		default:
 			printed += _putchar('%');
 			printed += _putchar(c);
