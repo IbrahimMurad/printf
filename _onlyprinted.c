@@ -30,7 +30,7 @@ char *only_printed_chars(char *s)
 		else
 		{
 			buf = append_str(buf, "\\x");
-			c = _itos(s[i]);
+			c = _putunsigned(c, (unsigned int) s[i], 16);
 			buf = append_str(buf, c);
 		}
 		i++;
