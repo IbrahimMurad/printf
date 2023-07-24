@@ -29,7 +29,7 @@ char *only_printed_chars(char *s)
 		}
 		else
 		{
-			buf = append_str(buf, "\\x(");
+			buf = append_str(buf, "\\x");
 			c = _itos(s[i]);
 			buf = append_str(buf, c);
 		}
