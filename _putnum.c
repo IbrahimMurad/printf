@@ -28,7 +28,6 @@ int _putnum(int num, unsigned int base)
 	{
 		temp_num = num;
 	}
-	
 	if (temp_num < base)
 	{
 		printed += write(1, &c[temp_num], 1);

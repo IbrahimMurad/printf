@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * _putnum - prints an integer according to the base number
+ * _putunsigned - prints an integer according to the base number
  * @num: the number to be printed
  * @base: the number's base
  *

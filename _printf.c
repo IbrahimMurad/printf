@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 {
 	int i = 0, printed = 0;
 	va_list args;
+
 	if (args == NULL)
 	{
 		return (-1);
