@@ -33,4 +33,6 @@ char *unsigned_printf(unsigned int n, char c);
 
 char *rev_str(char *s);
 
+char *rot13(char *s);
+
 #endif
