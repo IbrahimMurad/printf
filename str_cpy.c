@@ -12,14 +12,12 @@
 
 char *str_cpy(char *buf, char *s)
 {
-	int len, i = 0;
+	int i = 0;
 
 	if (s == NULL)
 	{
 		return (NULL);
 	}
-	len = str_len(s);
-	buf = malloc(len + 1);
 	while (s[i])
 	{
 		buf[i] = s[i];

@@ -17,6 +17,7 @@ int _putstr(char *s)
 
 	if (s == NULL)
 	{
+		temp_s = malloc(7);
 		temp_s = str_cpy(temp_s, "(null)");
 		printed += write(1, temp_s, 6);
 		free(temp_s);

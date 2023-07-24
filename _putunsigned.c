@@ -3,25 +3,25 @@
 
 /**
  * _putunsigned - prints an integer according to the base number
+ * @buf: the buffer where the number is written
  * @num: the number to be printed
  * @base: the number's base
  *
  * Return: the number of printed bytes
  */
 
-int _putunsigned(unsigned int num, unsigned int base)
+char *_putunsigned(char *buf, unsigned int num, unsigned int base)
 {
 	char c[] = "0123456789ABCDEF";
-	int printed = 0;
 
 	if (num < base)
 	{
-		printed += write(1, &c[num], 1);
+		buf = append_char(buf, c[num]);
 	}
 	else
 	{
-		printed += _putunsigned(num / base, base);
-		printed += write(1, &c[num % base], 1);
+		buf = _putunsigned(buf, ((num) / (base)), base);
+		buf = append_char(buf, c[num % base]);
 	}
-	return (printed);
+	return (buf);
 }

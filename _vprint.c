@@ -17,33 +17,28 @@ int vprint(char c, va_list args)
 
 	switch (c)
 	{
+		case 's':
+			printed += _putstr(va_arg(args, char *));
+			break;
 		case 'c':
 			printed += _putchar(va_arg(args, int));
 			break;
 		case '%':
 			printed += _putchar('%');
 			break;
-		case 's':
-			printed += _putstr(va_arg(args, char *));
-			break;
 		case 'i':
 		case 'd':
-			printed += _putnum(va_arg(args, int), 10);
+		case 'x':
+			printed += _printf("%s", num_printf(va_arg(args, int), c));
 			break;
 		case 'b':
-			printed += _putunsigned(va_arg(args, unsigned int), 2);
-			break;
 		case 'u':
-			printed += _putunsigned(va_arg(args, unsigned int), 10);
-			break;
 		case 'o':
-			printed += _putunsigned(va_arg(args, unsigned int), 8);
-			break;
-		case 'x':
-			printed += _putnum(va_arg(args, int), 16);
-			break;
 		case 'X':
-			printed += _putunsigned(va_arg(args, unsigned int), 16);
+			printed += _printf("%s", unsigned_printf(va_arg(args, unsigned int), c));
+			break;
+		case 'S':
+			printed += _printf("%s", only_printed_chars(va_arg(args, char *)));
 			break;
 		default:
 			printed += _putchar('%');

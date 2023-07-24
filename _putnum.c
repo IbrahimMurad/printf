@@ -3,26 +3,23 @@
 
 /**
  * _putnum - prints an integer according to the base number
+ * @buf: the buffer where the number is written
  * @num: the number to be printed
  * @base: the number's base
  *
  * Return: the number of printed bytes
  */
 
-int _putnum(int num, unsigned int base)
+char *_putnum(char *buf, int num, unsigned int base)
 {
 	char c[] = "0123456789abcdef";
 	unsigned int temp_num;
-	int printed = 0;
 	char sign = '-';
 
 	if (base == 10 && num < 0)
 	{
 		temp_num = -num;
-		if (base == 10)
-		{
-			printed += write(1, &sign, 1);
-		}
+		buf = append_char(buf, sign);
 	}
 	else
 	{
@@ -30,12 +27,12 @@ int _putnum(int num, unsigned int base)
 	}
 	if (temp_num < base)
 	{
-		printed += write(1, &c[temp_num], 1);
+		buf = append_char(buf, c[temp_num]);
 	}
 	else
 	{
-		printed += _putnum(temp_num / base, base);
-		printed += write(1, &c[temp_num % base], 1);
+		buf = _putnum(buf, temp_num / base, base);
+		buf = append_char(buf, c[temp_num % base]);
 	}
-	return (printed);
+	return (buf);
 }
