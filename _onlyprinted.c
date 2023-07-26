@@ -10,13 +10,11 @@
  * or -1 (failed)
  */
 
-char *only_printed_chars(char *s)
+char *only_printed_chars(char *buf, char *s)
 {
 	int i = 0;
-	char *buf = malloc(1024);
-	char *c = malloc(4);
+	char *c = NULL;
 
-	buf[0] = '\0';
 	if (s == NULL)
 	{
 		return (NULL);
@@ -35,5 +33,6 @@ char *only_printed_chars(char *s)
 		}
 		i++;
 	}
+	free(c);
 	return (buf);
 }

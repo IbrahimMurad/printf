@@ -12,15 +12,12 @@
 char *append_char(char *buf, char c)
 {
 	int i = 0;
-	char *temp_buf;
 
-	temp_buf = malloc(str_len(buf) + 2);
 	while (buf[i])
 	{
-		temp_buf[i] = buf[i];
 		i++;
 	}
-	temp_buf[i] = c;
-	temp_buf[i + 1] = '\0';
-	return (temp_buf);
+	buf[i] = c;
+	buf[i + 1] = '\0';
+	return (buf);
 }

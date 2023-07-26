@@ -9,11 +9,8 @@
  * Return: a pointer to the buffer
  */
 
-char *unsigned_printf(unsigned int n, char c)
+char *unsigned_printf(char* buf, unsigned int n, char c)
 {
-	char *buf = malloc(1024);
-
-	buf[0] = '\0';
 	switch (c)
 	{
 		case 'b':

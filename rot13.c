@@ -1,3 +1,5 @@
+#include "main.h"
+#include <stdlib.h>
 /**
  * rot13 -  encodes a string using rot13
  * @s: the string to encode
@@ -6,11 +8,14 @@
  */
 char *rot13(char *s)
 {
-	char *temp = s;
 	char input_arr[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char output_arr[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	int i, j;
 
+	if (s == NULL)
+	{
+		return (NULL);
+	}
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; j < 52; j++)
@@ -22,5 +27,5 @@ char *rot13(char *s)
 			}
 		}
 	}
-	return (temp);
+	return (s);
 }

@@ -9,11 +9,8 @@
  * Return: a pointer to the buffer
  */
 
-char *num_printf(int n, char c)
+char *num_printf(char *buf, int n, char c)
 {
-	char *buf = malloc(1024);
-
-	buf[0] = '\0';
 	switch (c)
 	{
 		case 'd':

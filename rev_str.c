@@ -11,7 +11,7 @@
 char *rev_str(char *s)
 {
 	int len, i;
-	char c;
+	char temp;
 
 	if (s == NULL)
 	{
@@ -20,9 +20,9 @@ char *rev_str(char *s)
 	len = str_len(s);
 	for (i = 0; i < len / 2; i++)
 	{
-		c = s[i];
+		temp = s[i];
 		s[i] = s[len - i - 1];
-		s[len - i - 1] = c;
+		s[len - i - 1] = temp;
 	}
 	return (s);
 }

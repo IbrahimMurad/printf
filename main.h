@@ -19,7 +19,7 @@ char *_putnum(char *buf, int num, unsigned int base);
 
 char *_putunsigned(char *buf, unsigned int num, unsigned int base);
 
-char *only_printed_chars(char *s);
+char *only_printed_chars(char *buf, char *s);
 
 char *_itos(int n);
 
@@ -27,9 +27,9 @@ char *append_char(char *buf, char c);
 
 char *append_str(char *buf, char *str);
 
-char *num_printf(int n, char c);
+char *num_printf(char *buf, int n, char c);
 
-char *unsigned_printf(unsigned int n, char c);
+char *unsigned_printf(char *buf, unsigned int n, char c);
 
 char *rev_str(char *s);
 

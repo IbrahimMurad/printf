@@ -14,7 +14,13 @@
 int vprint(char c, va_list args)
 {
 	int printed = 0;
+	char *buf = malloc(1024);
 
+	if (buf == NULL)
+	{
+		return (-1);
+	}
+	buf[0] = '\0';
 	switch (c)
 	{
 		case 's':
@@ -29,16 +35,16 @@ int vprint(char c, va_list args)
 		case 'i':
 		case 'd':
 		case 'x':
-			printed += _printf("%s", num_printf(va_arg(args, int), c));
+			printed += _printf("%s", num_printf(buf, va_arg(args, int), c));
 			break;
 		case 'b':
 		case 'u':
 		case 'o':
 		case 'X':
-			printed += _printf("%s", unsigned_printf(va_arg(args, unsigned int), c));
+			printed += _printf("%s", unsigned_printf(buf, va_arg(args, unsigned int), c));
 			break;
 		case 'S':
-			printed += _printf("%s", only_printed_chars(va_arg(args, char *)));
+			printed += _printf("%s", only_printed_chars(buf, va_arg(args, char *)));
 			break;
 		case 'r':
 			printed += _printf("%s", rev_str(va_arg(args, char*)));
@@ -51,5 +57,6 @@ int vprint(char c, va_list args)
 			printed += _putchar(c);
 			break;
 	}
+	free(buf);
 	return (printed);
 }

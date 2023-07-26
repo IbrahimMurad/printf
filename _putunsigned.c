@@ -20,7 +20,7 @@ char *_putunsigned(char *buf, unsigned int num, unsigned int base)
 	}
 	else
 	{
-		buf = _putunsigned(buf, ((num) / (base)), base);
+		buf = _putunsigned(buf, num / base, base);
 		buf = append_char(buf, c[num % base]);
 	}
 	return (buf);
