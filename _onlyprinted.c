@@ -4,6 +4,7 @@
 /**
  * only_printed_chars - copies a string to buffer but only printed characters
  * other characters are replaced by \x(the ASCII value of the char)
+ * @buf: the buffer to which the string is written
  * @s: the string
  *
  * Return: 0 (success)

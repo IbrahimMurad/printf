@@ -3,6 +3,7 @@
 
 /**
  * num_printf - prints any related number conversions to a buffer
+ * @buf: a pointer to the buffer to which the string is written
  * @n: the number
  * @c: the conversion specifier
  *

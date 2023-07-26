@@ -3,13 +3,14 @@
 
 /**
  * unsigned_printf - prints any related number conversions to a buffer
+ * @buf: the buffer to which the string is written
  * @n: the number
  * @c: the conversion specifier
  *
  * Return: a pointer to the buffer
  */
 
-char *unsigned_printf(char* buf, unsigned int n, char c)
+char *unsigned_printf(char *buf, unsigned int n, char c)
 {
 	switch (c)
 	{
