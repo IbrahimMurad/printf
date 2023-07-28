@@ -8,7 +8,7 @@
  * Return: a pointer to the reversed string
  */
 
-char *rev_str(char *s)
+char *rev_str(char *buf, char *s)
 {
 	int len, i;
 	char temp;
@@ -18,11 +18,13 @@ char *rev_str(char *s)
 		return (NULL);
 	}
 	len = str_len(s);
+	buf = str_cpy(buf, s);
 	for (i = 0; i < len / 2; i++)
 	{
-		temp = s[i];
-		s[i] = s[len - i - 1];
-		s[len - i - 1] = temp;
+		temp = buf[i];
+		buf[i] = buf[len - i - 1];
+		buf[len - i - 1] = temp;
 	}
-	return (s);
+	buf[len] = '\0';
+	return (buf);
 }

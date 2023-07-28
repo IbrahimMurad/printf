@@ -6,9 +6,9 @@
  *
  * Return: a pointer to the encoded string
  */
-char *rot13(char *s)
+char *rot13(char *buf, char *s)
 {
-	char input_arr[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char input_arr[] =  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char output_arr[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	int i, j;
 
@@ -22,10 +22,15 @@ char *rot13(char *s)
 		{
 			if (s[i] == input_arr[j])
 			{
-				s[i] = output_arr[j];
+				buf[i] = output_arr[j];
 				break;
+			}
+			else
+			{
+				buf[i] = s[i];
 			}
 		}
 	}
-	return (s);
+	buf[i] = '\0';
+	return (buf);
 }

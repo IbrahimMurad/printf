@@ -9,7 +9,7 @@ int vprint(char c, va_list args);
 
 int str_len(char *s);
 
-char *str_cpy(char *buf, char *s);
+char *str_cpy(char *buf,char *s);
 
 int _putchar(char c);
 
@@ -31,8 +31,8 @@ char *num_printf(char *buf, int n, char c);
 
 char *unsigned_printf(char *buf, unsigned int n, char c);
 
-char *rev_str(char *s);
+char *rev_str(char *buf, char *s);
 
-char *rot13(char *s);
+char *rot13(char *buf, char *s);
 
 #endif
